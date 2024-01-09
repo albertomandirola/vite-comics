@@ -10,3 +10,8 @@
     margin: 0;
     text-transform: uppercase;
 }
+
+@mixin vertical-center {
+    display: flex;
+    align-items: center;
+}
