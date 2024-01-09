@@ -2,46 +2,56 @@
 export default {
   data() {
     return {
-      liLinks: [
+      links: [
         {
-          linkName: 'Characters',
-          url: '#'
+          name: 'Characters',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'Comics',
-          url: '#'
+          name: 'Comics',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'Movies',
-          url: '#'
+          name: 'Movies',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'Tv',
-          url: '#'
+          name: 'Tv',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'Games',
-          url: '#'
+          name: 'Games',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'Collectibles',
-          url: '#'
+          name: 'Collectibles',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'videos',
-          url: '#'
+          name: 'videos',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'fans',
-          url: '#'
+          name: 'fans',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'news',
-          url: '#'
+          name: 'news',
+          url: '#',
+          active: false,
         },
         {
-          linkName: 'shop',
-          url: '#'
+          name: 'shop',
+          url: '#',
+          active: false,
         },
       ]
     }
@@ -49,11 +59,69 @@ export default {
 }
 </script>
 <template lang="">
-  <div>
-    <img src="../assets/img/dc-logo.png" alt="logo dc comics">
-
-  </div>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="">
+            <img src="../assets/img/dc-logo.png" alt="">
+          </a>
+        </div>
+        <div class="list">
+          <ul>
+            <li v-for="(link , index) in links" :key="index">
+              <a href="{{link.url}}">{{link.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </header>
 </template>
-<style lang="">
-  
+<style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    a {
+      img {
+        width: 80px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .list {
+    vertical-align: middle;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+
+      li {
+        padding: 0 10px;
+
+        a {
+          text-transform: uppercase;
+          color: black;
+          line-height: 80px;
+          font-weight: 600;
+          font-size: 12px;
+
+          &:active,
+          &:hover {
+            color: $primary_color;
+
+          }
+        }
+      }
+    }
+  }
+
+}
 </style>
