@@ -82,9 +82,17 @@ export default {
 </script>
 <template lang="">
   <main>
+    <div class="jumbotron">
+
+    </div>
     <div class="container">
        <div class="card" v-for="comic, index in comics">
-        <img :src="comic.thumb" alt="">
+          <div class="img-container">
+            <img :src="comic.thumb" alt="">
+          </div>
+          <div class="text-container">
+            {{comic.series}}
+          </div>
        </div>
     </div>
    
@@ -95,19 +103,38 @@ main {
   background-color: black;
   color: white;
 
+  .jumbotron {
+    height: 50vh;
+    background-image: url(../assets/img/jumbotron.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
 
     .card {
       width: calc(100%/6 - 20px);
-      height: 200px;
+      height: 250px;
       overflow: hidden;
       margin: 10px;
 
-      img {
+      .img-container {
+        overflow: hidden;
+        height: 80%;
         width: 100%;
+
+        img {
+          width: 100%;
+        }
       }
+
+      .text-container {
+        padding: 10px 0;
+      }
+
+
     }
   }
 
