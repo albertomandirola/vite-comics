@@ -2,57 +2,26 @@
 export default {
   data() {
     return {
-      links: [
-        {
-          name: 'Characters',
-          url: '#'
-        },
-        {
-          name: 'Comics',
-          url: '#'
-        },
-        {
-          name: 'Movies',
-          url: '#'
-        },
-        {
-          name: 'Tv',
-          url: '#'
-        },
-        {
-          name: 'Games',
-          url: '#'
-        },
-        {
-          name: 'Collectibles',
-          url: '#'
-        },
-        {
-          name: 'videos',
-          url: '#'
-        },
-        {
-          name: 'fans',
-          url: '#'
-        },
-        {
-          name: 'news',
-          url: '#'
-        },
-        {
-          name: 'shop',
-          url: '#'
-        },
-      ]
+
     }
   }
 }
 </script>
 <template lang="">
   <main>
-
+    <div class="container">
+       <h1> --> Content goes hear <-- </h1>
+    </div>
+   
   </main>
 </template>
-<style lang="">
-  
+<style lang="scss" scoped>
+main {
+  background-color: black;
+  color: white;
+
+  h1 {
+    padding: 20px 0;
+  }
+}
 </style>

@@ -1,0 +1,12 @@
+@mixin space-between-vertical-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin orizontal-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    text-transform: uppercase;
+}

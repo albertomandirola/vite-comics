@@ -81,33 +81,30 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  @include space-between-vertical-center;
 
   .logo {
     a {
       img {
         width: 80px;
-        vertical-align: middle;
+        padding: 10px 0;
       }
     }
   }
 
   .list {
-    vertical-align: middle;
 
     ul {
-      list-style-type: none;
-      margin: 0;
-      display: flex;
+      @include orizontal-list;
 
       li {
         padding: 0 10px;
 
         a {
-          text-transform: uppercase;
           color: black;
           line-height: 80px;
           font-weight: 600;
