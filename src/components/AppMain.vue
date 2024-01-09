@@ -1,5 +1,9 @@
 <script>
+import ComicCard from './ComicCard.vue'
 export default {
+  components: {
+    ComicCard
+  },
   data() {
     return {
       comics: [
@@ -83,24 +87,22 @@ export default {
 <template lang="">
   <main>
     <div class="jumbotron">
-
+      <div class="container">
+        <div class="bunner">Current series</div>
+      </div>
     </div>
-    <div class="container">
-       <div class="card" v-for="comic, index in comics">
-          <div class="img-container">
-            <img :src="comic.thumb" alt="">
-          </div>
-          <div class="text-container">
-            {{comic.series}}
-          </div>
-       </div>
+    <div class="container py-5">
+       <ComicCard v-for='comic, index in comics' :key='index' :comic='comic'  />
     </div>
    
   </main>
 </template>
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
 main {
-  background-color: black;
+  background-color: rgb(19, 23, 23);
   color: white;
 
   .jumbotron {
@@ -108,11 +110,23 @@ main {
     background-image: url(../assets/img/jumbotron.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+
+
+    .bunner {
+      position: absolute;
+      bottom: 0;
+      transform: translate(0, 50%);
+      background-color: $primary_color;
+      padding: 5px 10px;
+
+    }
   }
 
   .container {
     display: flex;
     flex-wrap: wrap;
+    padding: 50px 0;
 
     .card {
       width: calc(100%/6 - 20px);

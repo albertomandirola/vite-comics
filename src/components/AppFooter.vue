@@ -150,7 +150,7 @@ export default {
 }
 
 .bottom-footer {
-  background-color: darkslategrey;
+  background-color: rgb(19, 23, 23);
   font-weight: 600px
 }
 
